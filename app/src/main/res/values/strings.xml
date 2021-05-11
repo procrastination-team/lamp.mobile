@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Lamp brightness control</string>
+    <string name="lamp">lamp</string>
+    <string name="my_lamps">My lamps</string>
+    <string name="bright">bright</string>
+</resources>
