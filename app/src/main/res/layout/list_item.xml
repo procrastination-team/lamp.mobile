@@ -29,7 +29,7 @@
             app:srcCompat="@drawable/lamplamp" />
 
         <TextView
-            android:id="@+id/textViewSign"
+            android:id="@+id/textViewLampID"
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
 
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textViewLampBrightness"
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -54,8 +54,22 @@
             android:textColor="#BF000000"
 
             android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@+id/textViewSign"
+            app:layout_constraintStart_toEndOf="@+id/textViewLampID"
             app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:layout_marginEnd="8dp"
+            android:id="@+id/OnOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/button_onoff_indicator_on" />
+
 
         <SeekBar
             android:id="@+id/seekBar"
