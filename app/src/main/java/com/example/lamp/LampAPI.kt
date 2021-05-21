@@ -16,14 +16,14 @@ import retrofit2.http.Path
 
 interface LampAPI {
     //https://jsonplaceholder.typicode.com/posts
-    @GET("lamps")
+    @GET("api/lamps")
     fun getLamps(): Call<List<Lamp>>
 
-    @PUT("lamps/{id}")
+    @PUT("api/lamp/{id}")
     fun putLamp(@Path("id") lampId: String, @Body lamp: Lamp): Call<ResponseBody>
 
     companion object {
-        private const val SERVER_URL = "http://10.0.2.2:5000/"
+        private const val SERVER_URL = "http://46.101.212.61/"
 
         fun newInstance(baseURL: String = SERVER_URL): LampAPI {
             val okHttpClient = OkHttpClient.Builder()

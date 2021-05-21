@@ -18,11 +18,11 @@ class LampsAdapter(
 ) : RecyclerView.Adapter<LampsAdapter.LampViewHolder>() {
     class LampViewHolder(private val root: View) : RecyclerView.ViewHolder(root) {
         fun bind(lamp: Lamp) {
-            root.findViewById<TextView>(R.id.textViewLampID).text = lamp.id
+            root.findViewById<TextView>(R.id.textViewLampID).text = lamp.name
             root.findViewById<TextView>(R.id.textViewLampBrightness).text =
                 lamp.brightness.toString()
             val image = root.findViewById<ImageView>(R.id.OnOff)
-            if (lamp.power == 0) {
+            if (!lamp.isOn) {
                 image.setImageResource(android.R.drawable.button_onoff_indicator_off)
             } else {
                 image.setImageResource(android.R.drawable.button_onoff_indicator_on)
@@ -57,7 +57,8 @@ class LampsAdapter(
                     call: Call<ResponseBody>,
                     response: Response<ResponseBody>
                 ) {
-                    Log.i("Adapter", "post successful")
+
+                    Log.i("Adapter", "light status: ${response.code()}")
                 }
 
                 override fun onFailure(call: Call<ResponseBody>, t: Throwable) {

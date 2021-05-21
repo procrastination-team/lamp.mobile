@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         lampAPI.getLamps().enqueue(object : Callback<List<Lamp>> {
             override fun onResponse(call: Call<List<Lamp>>, response: Response<List<Lamp>>) {
                 val responseBody = response.body()
-                if (responseBody != null) {
+                if (responseBody != null && response.isSuccessful) {
                     findViewById<RecyclerView>(R.id.myRecyclerView).apply {
                         layoutManager = LinearLayoutManager(this@MainActivity)
                         adapter = LampsAdapter(responseBody)

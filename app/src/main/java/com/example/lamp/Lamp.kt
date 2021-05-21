@@ -1,3 +1,10 @@
 package com.example.lamp
 
-data class Lamp(val id: String, var brightness: Int = 0, var power: Int = 0)
+import com.squareup.moshi.Json
+
+data class Lamp(
+    val id: String,
+    val name: String,
+    var brightness: Int = 0,
+    @Json(name = "power") var isOn: Boolean
+)
